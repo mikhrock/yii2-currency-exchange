@@ -45,5 +45,10 @@ return [
         ],
         */
     ],
+    'modules' => [
+            'currencyrate' => [
+                'class' => 'frontend\modules\currencyrate\CurrencyRate',
+            ],
+        ],
     'params' => $params,
 ];
