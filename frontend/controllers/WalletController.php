@@ -44,13 +44,16 @@ class WalletController extends Controller
     }
 
     /**
-     * Lists all Wallet models.
+     * Lists all Wallet models for the currently logged in user.
      * @return mixed
      */
     public function actionIndex()
     {
         $searchModel = new WalletSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $queryParams = Yii::$app->request->queryParams;
+        $queryParams['WalletSearch']['id_user'] = Yii::$app->user->id;
+        
+        $dataProvider = $searchModel->search($queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
