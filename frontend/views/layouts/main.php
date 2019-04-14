@@ -38,7 +38,7 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Wallets', 'url' => ['/wallet']],
-        ['label' => 'Currency Exchange', 'url' => ['/currencyrate']],
+        ['label' => 'Currency Rate', 'url' => ['/currencyrate']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
